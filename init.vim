@@ -5,6 +5,7 @@ call dein#add('Shougo/dein.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('vim-airline/vim-airline')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('ctrlpvim/ctrlp.vim')
 if dein#check_install()
     call dein#install()
 endif
@@ -29,12 +30,13 @@ set ffs=unix,dos,mac " Unix file format
 " Rendering and display
 colorscheme desert
 set background=dark
-set lazyredraw 
+set lazyredraw
 set showmatch " Show matching [({})]
 set ruler             " Show on-screen position
 set title             " Update the terminal title
 set scrolloff=3       " More context around scrolling
 set sidescrolloff=5   " More context around scrolling horizontally
+set updatetime=250    " Update time 250ms
 
 " Make \s turn on/off trailing whitespace
 set listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:_,eol:$
@@ -92,3 +94,18 @@ nnoremap <leader>u :GundoToggle<CR>
 " Directory browsing
 nnoremap <silent> <Leader>d :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>r :NERDTreeFind<CR>
+
+" CtrlP
+"     <c-p>        -- Launch CtrlP
+"     <c-f>, <c-b> -- cycle between modes
+"     <c-d>        -- filename only vs full path
+"     <c-r>        -- regexp
+"     <c-j>, <c-k> -- navigate result list
+"     <c-n>, <c-p> -- select next/prev string in history
+set wildignore+=/tmp/*,*.so,*.sw[pomn],*.zip
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+
+" GitGutter settings default keybindings:
+"     nmap ]c " next hunk
+"     nmap [c " previous hunk
+
