@@ -3,9 +3,11 @@ set runtimepath+=~/.config/nvim/repos/Shougo/dein.vim/
 call dein#begin(expand('~/.cache/nvim/repos'))
 call dein#add('Shougo/dein.vim')
 call dein#add('scrooloose/nerdtree')
+call dein#add('scrooloose/nerdcommenter')
 call dein#add('vim-airline/vim-airline')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('ctrlpvim/ctrlp.vim')
+call dein#add('valloric/youcompleteme')
 if dein#check_install()
     call dein#install()
 endif
@@ -17,6 +19,8 @@ syntax on
 
 set shell=bash        " Use the right shell
 nnoremap <silent> <Leader>ev :e $MYVIMRC<CR>
+
+let g:python_host_skip_check = 1
 
 """"""""""""""""""""""""""""""""""""""""
 " Whitespace and newlines
@@ -60,6 +64,10 @@ set visualbell " No sound on errors
 set showcmd    " Show (partial) command in status line
 
 """"""""""""""""""""""""""""""""""""""""
+" Folding
+set foldenable
+
+""""""""""""""""""""""""""""""""""""""""
 " Editing
 set backspace=indent,eol,start " Backspace into previous line
 set whichwrap+=<,>,h,l
@@ -92,6 +100,7 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 nnoremap <leader>u :GundoToggle<CR>
 
 " Directory browsing
+let NERDTreeIgnore = ['\.pyc$']
 nnoremap <silent> <Leader>d :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>r :NERDTreeFind<CR>
 
@@ -109,3 +118,18 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "     nmap ]c " next hunk
 "     nmap [c " previous hunk
 
+" Commenter defaults:
+"     noremap <silent> <leader>cc :NERDComComment
+"     noremap <silent> <leader>cn :NERDComNestedComment
+"     noremap <silent> <leader>c<space> :NERDComToggleComment
+"     noremap <silent> <leader>cm :NERDComMinimalComment
+"     noremap <silent> <leader>ci :NERDComInvertComment
+"     noremap <silent> <leader>cs :NERDComSexyComment
+"     noremap <silent> <leader>cy :NERDComYankComment
+"     noremap <silent> <leader>cy :NERDComYankComment
+"     noremap <silent> <leader>c$ :NERDComEOLComment
+"     noremap <silent> <leader>cA :NERDComAppendComment
+"     noremap <silent> <leader>cu :NERDComUncommentLine
+
+" Gundo
+"
