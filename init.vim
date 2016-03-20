@@ -12,6 +12,7 @@ call dein#add('ctrlpvim/ctrlp.vim')
 call dein#add('derekwyatt/vim-fswitch')
 call dein#add('tpope/vim-surround')
 call dein#add('fholgado/minibufexpl.vim')
+call dein#add('moll/vim-bbye')
 "call dein#add('jeetsukumaran/vim-buffergator')
 if dein#check_install()
     call dein#install()
@@ -88,8 +89,8 @@ map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
 map <Leader>a :A<CR>
 map <Leader>l :b#<CR>
-map <Leader>k :Bclose<CR>
-map <Leader>K :Bclose!<CR>
+map <Leader>k :Bdelete<CR>
+map <Leader>K :Bdelete!<CR>
 set hidden " Allow moving between buffers with file changes
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
