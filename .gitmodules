@@ -1,3 +1,6 @@
 [submodule "bundle/YouCompleteMe"]
 	path = bundle/YouCompleteMe
 	url = https://github.com/valloric/youcompleteme.git
+[submodule "repos/Shougo/dein.vim"]
+	path = repos/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim

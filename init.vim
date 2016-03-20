@@ -142,6 +142,12 @@ let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 " FSSwitch - alternate between current files
 noremap <leader>a :FSHere<CR>
 
+" MiniBufExpl
+noremap <leader>bo :MBEOpen<CR>
+noremap <leader>bt :MBEToggle<CR>
+noremap <leader>bf :MBEFocus<CR>
+noremap <leader>bm :MBEToggleMRU<CR>
+
 " YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_insertion = 1
