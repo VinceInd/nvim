@@ -1,4 +1,5 @@
 *.sw[pmno]
+*.pyc
 .init.vim-rplugin~
 /repos/
 
